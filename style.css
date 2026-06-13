@@ -1,26 +1,190 @@
+/* ===== Fonts loaded via <link> in HTML head =====
+   Fraunces  -> headings / logo feel (soft serif)
+   Poppins   -> body, labels, inputs (rounded sans)
+================================================= */
+
+/* ---------- Reset-ish base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #3d3a3a;
+  background-color: #fffdf9;
+}
+
+/* ---------- Layout: two columns ---------- */
 .container {
   display: flex;
   min-height: 100vh;
 }
 
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  flex: 2;
-}
-
+/* ---------- Sidebar ---------- */
 .sidebar {
-  background-image: url("images/girl.jpg");
+  width: 700px;
+  background-image: linear-gradient(
+      rgba(40, 30, 30, 0.25),
+      rgba(40, 30, 30, 0.4)
+    ),
+    url("images/girl.jpg");
   background-size: cover;
   background-position: center;
+  /* ...background stuff... */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 700px;
-  flex: 1;
+  align-items: center;       /* keeps logo horizontally centered */
 }
 
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 230px;          /* was 180px */
+  height: 230px;         /* keep equal to width */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  margin-top: 380px;
+  padding: 0;
+  
+}
+
+.logo-icon {
+  height: 160px;         /* was 130px — scale the art up too */
+  width: auto;
+
+}
+
+.credit {
+  margin-top: auto;
+  align-self: flex-start;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 14px 18px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.credit a {
+  color: #fff;
+}
+
+/* ---------- Right panel ---------- */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffdf9;
+}
+
+.main-panel {
+  padding: 60px 50px 30px;
+  max-width: 720px;
+}
+
+.main-panel p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #4a4444;
+}
+
+/* ---------- Form section ---------- */
+.signup-info {
+  background-color: #fff;
+  padding: 30px 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-heading {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0 0 24px;
+  color: #3d3a3a;
+}
+
+.signup-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  max-width: 720px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b6565;
+  margin-bottom: 6px;
+}
+
+.signup-form input {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.signup-form input:focus {
+  border-color: #f0b429;
+  box-shadow: 0 0 6px rgba(240, 180, 41, 0.5);
+  outline: none;
+}
+
+.signup-form input:user-invalid {
+  border-color: #e5484d;
+  box-shadow: 0 0 6px rgba(229, 72, 77, 0.35);
+}
+
+/* ---------- Button area ---------- */
+.button-area {
+  padding: 30px 50px;
+}
+
+.submit-btn {
+  background-color: #f0b429;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 36px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(240, 180, 41, 0.35);
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e0a01a;
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+}
+
+.login-line {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #4a4444;
+}
+
+.login-line a {
+  color: #e0a01a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-line a:hover {
+  text-decoration: underline;
 }
