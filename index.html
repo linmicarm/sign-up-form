@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glow — Sign Up</title>
+
+    <!-- Favicon: uses your logo as the browser tab icon -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -32,32 +38,70 @@
 
         <div class="signup-info">
           <h2 class="form-heading">Let's glow together!</h2>
-          <form class="signup-form">
+          <form id="signup-form-id" class="signup-form">
             <div class="form-field">
               <label for="first-name">First Name</label>
-              <input type="text" id="first-name" />
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Jane"
+                autocomplete="given-name"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="last-name">Last Name</label>
-              <input type="text" id="last-name" />
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Doe"
+                autocomplete="family-name"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="email">Email</label>
-              <input type="email" id="email" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
             </div>
             <div class="form-field">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" />
+              <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(555) 123-4567"
+                autocomplete="tel"
+              />
             </div>
             <div class="form-field">
               <label for="password">Password</label>
-              <input type="password" id="password" minlength="8" required />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="At least 8 characters"
+                autocomplete="new-password"
+                minlength="8"
+                required
+              />
             </div>
             <div class="form-field">
               <label for="confirm-password">Confirm Password</label>
               <input
                 type="password"
                 id="confirm-password"
+                name="confirm-password"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
                 minlength="8"
                 required
               />
@@ -66,7 +110,9 @@
         </div>
 
         <div class="button-area">
-          <button class="submit-btn">Create Account</button>
+          <button type="submit" class="submit-btn" form="signup-form-id">
+            Create Account
+          </button>
           <p class="login-line">
             Already have an account? <a href="#">Log in</a>
           </p>
